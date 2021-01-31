@@ -75,8 +75,8 @@ public class BlogController {
         return "redirect:/blog";
     }
     //функция для обработки данных со страницы "РЕДАКТИРОВАНИЯ"
-    @PostMapping("/blog/{id}/edit") //title из файла blog-add и параметра name="title" и т.д.
-    public String blogPostUpdate(@PathVariable(value = "id") long id, Model model) {
+    @PostMapping("/blog/{id}/remove") //title из файла blog-add и параметра name="title" и т.д.
+    public String blogPostDelete(@PathVariable(value = "id") long id, Model model) {
         Post post = postRepository.findById(id).orElseThrow();
         postRepository.delete(post);
         return "redirect:/blog";
